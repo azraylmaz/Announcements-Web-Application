@@ -1,0 +1,41 @@
+@model List<Announcement>
+
+@{
+  ViewBag.Title = "Announcement List";
+  Layout = "_Layout"; 
+}
+
+<main class="text-center">
+<table class="table table-bordered w-85 mx-auto">
+    <thead>
+        <tr>
+            <td><b>Title</b></td>
+            <td><b>Text</b></td>
+            <td><b>Date</b></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+      
+      @foreach(var announcement in Model){
+        <tr>
+            <td>@announcement.Title</td>
+            <td>@announcement.Text</td>
+            <td>@announcement.date.ToString("g")</td>
+            <td><a class="btn btn-sm btn-warning" href="/Announcements/Details/@announcement.Id">Details</a></td>
+            
+       </tr>
+      }
+      
+        
+    </tbody>
+    
+</table>
+<a asp-controller="Announcements" asp-action="Add" class="btn btn-outline-warning"> Add New Announcement</a>
+</main>
+
+@section Footer{
+<footer class="text-center py-2 mt-4 border-top" style="color: #6c757d; font-size: 0.9rem;">
+      <p>&copy; Azra Yılmaz - b221202032</p>
+    </footer>
+}    

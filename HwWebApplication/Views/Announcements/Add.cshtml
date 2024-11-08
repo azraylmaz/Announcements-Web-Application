@@ -1,0 +1,31 @@
+@model Announcement
+
+@{
+  ViewBag.Title = "Add Announcement";
+  Layout = "_Layout";
+}
+
+
+<h1 class="h4 text-center">Add New Announcement</h1>
+<form method="post" action="/Announcements/Add" novalidate >
+  <div asp-validation-summary="All"></div>
+  <div class="mb-3">
+    <label asp-for="Title" class="form-label">Title</label>
+    <input asp-for="Title" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label asp-for="Text" class="form-label">Text</label>
+    <input asp-for="Text" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label asp-for="ResponsiblePerson" class="form-label">Responsible Person</label>
+    <input asp-for="ResponsiblePerson" class="form-control">
+  </div>
+  <button class="btn btn-warning " type="submit">Save</button>
+</form>
+
+@section Footer{
+<footer class="text-center py-2 mt-4 border-top" style="color: #6c757d; font-size: 0.9rem;">
+      <p>&copy; Alperen Yazıcı - b221202019</p>
+    </footer>
+}    
